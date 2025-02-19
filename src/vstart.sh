@@ -1257,6 +1257,9 @@ EOF
             fi
 
 	    # wait for volume module to load
+	    python3 --version
+       
+	    ceph_adm --debug-monc 50 --debug-mon 50 --debug-mgrc 50 fs volume ls
 	    while ! ceph_adm fs volume ls ; do sleep 1 ; done
             local fs=0
             for name in a b c d e f g h i j k l m n o p
